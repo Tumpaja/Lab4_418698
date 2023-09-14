@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById("login-form");
+    const alertMessage = document.getElementById("alert-message");
 
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -8,11 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        // เช็คความถูกต้อง
-        if (username === "admin" && password === "password") {
-            alert("เข้าสู่ระบบสำเร็จ");
+        // เช็คความถูกต้อง (ตัวอย่างการเช็ค)
+        if (username === "Teeraphat" && password === "1234") {
+            alertMessage.textContent = "your username and password are correct! you are logged in"; // ลบข้อความแจ้งเตือนเก่า (ถ้ามี)
         } else {
-            alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+            // แสดง Alert และข้อความแจ้งเตือนด้านบนสุดของ login-container
+            alertMessage.textContent = "your username or password is incorrect! please try again.";
         }
     });
 });
